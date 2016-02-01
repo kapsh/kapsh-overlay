@@ -1,0 +1,10 @@
+--- paludis-2.4.0_p20160112.orig/zsh-completion/_cave	2015-08-07 13:17:28.000000000 +0300
++++ paludis-2.4.0_p20160112/zsh-completion/_cave	2016-01-30 07:27:58.646218483 +0300
+@@ -53,7 +53,6 @@
+     'print-checksum-algorithms:prints supported cryptographic checksum algorithms'
+     'print-commands:Prints a list of known cave commands'
+     'print-dependent-ids:Prints a list of installed IDs that are dependent upon another installed ID'
++    'print-ebuild-path: Get ebuild path for a given spec'
+     'print-environment-metadata:Prints environment metadata'
+     'print-id-actions:Prints ID actions'
+     'print-id-contents:Prints the contents of a package ID'

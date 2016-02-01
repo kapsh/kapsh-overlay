@@ -1,0 +1,12 @@
+--- localepurge.orig	2012-12-02 18:32:35.000000000 +0400
++++ localepurge	2016-01-30 08:56:21.622145456 +0300
+@@ -23,7 +23,7 @@
+ BRACKET=$'\e[34;01m'
+ BOLD=$'\e[1m'
+
+-ACTION="/bin/rm -vf"
++ACTION="/bin/rm -f"
+
+ eerror () {
+     echo -e " ${BAD}*${NORMAL} $*" 2> /dev/stderr
+

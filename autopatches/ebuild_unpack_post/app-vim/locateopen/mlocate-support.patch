@@ -1,0 +1,11 @@
+--- locateopen/plugin/locateopen.vim	2016-01-30 22:41:27.567804708 +0300
++++ locateopen/plugin/locateopen.vim	2016-02-01 03:11:37.815735679 +0300
+@@ -25,6 +25,8 @@
+     let s:slocate_app         = "slocate"
+ elseif executable("rlocate")
+     let s:slocate_app         = "rlocate"
++elseif executable("locate") 
++    let s:slocate_app = "locate"
+ else
+     finish
+ endif
