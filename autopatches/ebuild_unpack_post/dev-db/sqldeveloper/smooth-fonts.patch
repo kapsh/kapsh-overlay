@@ -1,0 +1,11 @@
+--- /sqldeveloper/bin/sqldeveloper.conf	2016-02-11 13:36:00.403386836 +0300
++++ /sqldeveloper/bin/sqldeveloper.conf 2016-02-11 13:29:15.843356345 +0300
+@@ -31,4 +31,8 @@
+ AddVMOption -Dsun.locale.formatasdefault=true
+ AddVMOption -Dorg.netbeans.CLIHandler.server=false
+
++# Fonts smoothing
++AddVMOption -Dawt.useSystemAAFontSettings=on
++AddVMOption -Dswing.aatext=true
++
+ IncludeConfFile  sqldeveloper-nondebug.conf
