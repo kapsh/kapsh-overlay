@@ -1,11 +1,10 @@
 # kapsh-overlay
 My local ebuilds
 
-Example for paludis config: 
+Example for paludis config:
 ```
 format = e
 location = /usr/portage/kapsh
-sync = git://github.com/kapsh/kapsh-overlay.git
+sync = git+ssh://git@github.com/kapsh/kapsh-overlay.git
 names_cache = /var/cache/paludis/names
-master_repository = gentoo
 ```
