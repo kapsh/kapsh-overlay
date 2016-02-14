@@ -5,6 +5,6 @@
 	</longdescription>
 	<use>
 		<flag name="udev-rules">Install udev rules for Android devices</flag>
-		<flag name="system-qt">Use packaged version of Qt libs (otherwise is not implemented)</flag>
+		<flag name="system-qt">Use system version of Qt libs instead of packaged</flag>
 	</use>
 </pkgmetadata>

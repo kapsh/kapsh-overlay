@@ -4,6 +4,8 @@
 
 EAPI=5
 
+inherit linux-info
+
 DESCRIPTION="SmartPhone Flash Tool for MTK based Android devices"
 HOMEPAGE="http://spflashtool.com/"
 SRC_URI="
@@ -23,10 +25,21 @@ RDEPEND="${DEPEND}
 		dev-qt/qtwebkit:4
 		dev-qt/qthelp:4
 	)
+	!system-qt? (
+		media-libs/libpng:1.2
+	)
 	sys-apps/util-linux
 	app-arch/bzip2"
 
 S="${WORKDIR}/SP_Flash_Tool_exe_Linux_v5.1520.00.100"
+
+pkg_pretend(){
+	ewarn "Checking for CONFIG_USB_ACM..."
+	linux-info_pkg_setup
+	if ! linux_config_exists || ! linux_chkconfig_present USB_ACM; then
+		ewarn "Usb modem (CDC ACM) support is required"
+	fi
+}
 
 src_prepare() {
 	if use system-qt; then
@@ -44,13 +57,12 @@ src_install() {
 	dodir ${dest}
 	insinto ${dest}
 	insopts -m 0644
-	doins *
-	fperms 755 ${dest}/flash_tool
+	doins -r *
+	fperms 755 ${dest}/flash_tool ${dest}/libflashtool.so ${dest}/bin/assistant plugins/*/*.so
 	newbin ${FILESDIR}/launcher.sh spflashtool
 }
 
 pkg_postinst(){
-	ewarn "After installation of udev run:"
+	ewarn "After first installation of udev rules run as root:"
 	ewarn "# udevadm control --reload-rules"
-
 }
