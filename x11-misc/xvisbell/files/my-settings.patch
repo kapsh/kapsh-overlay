@@ -1,0 +1,18 @@
+--- a/xvisbell.cpp
++++ b/xvisbell.cpp
+@@ -31,13 +31,13 @@
+ #include <sys/select.h>
+ #include <sys/time.h>
+
+-const struct timeval window_timeout = {0, 100000};
++const struct timeval window_timeout = {0, 500000};
+
+ // -1 means for w or h means screen width or height
+ struct {
+   int x, y;
+   int w, h;
+-} geometry = {0, 0, -1, 16};
++} geometry = {0, 0, -1, 20};
+
+ bool operator<(const struct timeval & a,
+                const struct timeval & b) {
