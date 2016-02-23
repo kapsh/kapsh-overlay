@@ -18,6 +18,7 @@ KEYWORDS="~amd64 ~x86"
 
 DEPEND=">=dev-python/setuptools-17.1"
 RDEPEND="${DEPEND}
+	dev-python/pathlib
 	dev-python/psutil
 	dev-python/colorama
 	dev-python/six
