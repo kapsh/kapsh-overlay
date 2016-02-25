@@ -9,13 +9,8 @@ DESCRIPTION="Load test and measure performance on HTTP/FTP services and database
 SLOT="0"
 RESTRICT="mirror"
 
-JM_PLUGINS="
-	+pl_standard
-	+pl_extras
-	pl_extraslibs
-	pl_hadoop
-	pl_webdriver
-	"
+JM_PLUGINS="+pl_standard +pl_extras
+	pl_extraslibs pl_hadoop pl_webdriver"
 
 IUSE="beanshell doc ${JM_PLUGINS}"
 
@@ -53,7 +48,7 @@ src_unpack() {
 }
 
 src_prepare() {
-	epatch "${FILESDIR}/tune.patch"
+	epatch "${FILESDIR}/tune-launcher.patch"
 }
 
 src_install() {
@@ -66,6 +61,11 @@ src_install() {
 		cp -pPR printable_docs "${dest}" || die "Failed to install docs"
 	fi
 	dodoc README || die
-	dosym "/opt/${PN}/bin/jmeter" "/usr/bin/jmeter"
+	dosym "/opt/${PN}/bin/jmeter" "/usr/bin/jmeter-bin"
+	make_desktop_entry "jmeter-bin" "Apache JMeter"
 	use doc && dohtml -r docs/*
+}
+
+pkg_postinst() {
+	einfo "For using with some window managers try install x11-misc/wmname"
 }
