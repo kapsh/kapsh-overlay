@@ -4,5 +4,10 @@
 <herd>java</herd>
 <use>
 	<flag name='beanshell'>Enable BeanShell scripting support</flag>
+	<flag name='pl_standard'>Basic plugins for everyday needs</flag>
+	<flag name='pl_extras'>Additional plugins for extended and complex testing</flag>
+	<flag name='pl_extraslibs'>Additional plugins that do require additional libs to run</flag>
+	<flag name='pl_hadoop'>Hadoop/HBase testing plugins</flag>
+	<flag name='pl_webdriver'>Selenium/WebDriver testing ability</flag>
 </use>
 </pkgmetadata>

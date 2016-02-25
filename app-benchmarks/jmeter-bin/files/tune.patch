@@ -1,11 +1,15 @@
 --- a/bin/jmeter	2015-03-08 13:13:54.000000000 +0300
 +++ b/bin/jmeter	2016-02-25 15:28:32.232707622 +0300
-@@ -133,4 +133,8 @@
+@@ -133,4 +133,12 @@
 
  ARGS="$SERVER $DUMP $HEAP $NEW $SURVIVOR $TENURING $EVACUATION $PERM $CLASS_UNLOAD"
 
 +AA_FONTS=" -Dawt.useSystemAAFontSettings=on -Dswing.aatext=true"
++# Prevent generating certificates to /jmeter/bin directory
 +NEWCERTHOME=" -Dproxy.cert.directory=/tmp"
 +ARGS="$ARGS $AA_FONTS $NEWCERTHOME"
++
++# Awesome WM workaround (x11-misc/wmname required)
++[ -x "$(which wmname)" ] && wmname "Sawfish"
 +
  java $ARGS $JVM_ARGS $JMETER_OPTS -jar "$PRGDIR/ApacheJMeter.jar" "$@"
