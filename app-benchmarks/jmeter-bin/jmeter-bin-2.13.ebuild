@@ -29,18 +29,22 @@ S=${WORKDIR}/apache-jmeter-${PV}
 
 src_unpack() {
     unpack ${A}
-
     cd "${S}"
+}
+
+src_prepare() {
+	epatch "${FILESDIR}/tune.patch"
 }
 
 src_install() {
     DIROPTIONS="--mode=0775"
     dodir /opt/${PN}
     local dest="${D}/opt/${PN}/"
-    cp -pPR bin/ lib/ README printable_docs/ "${dest}"
+    cp -pPR bin/ lib/ README "${dest}"
     if use doc; then
         cp -pPR printable_docs "${dest}" || die "Failed to install docs"
     fi
     dodoc README || die
+	dosym "/opt/${PN}/bin/jmeter" "/usr/bin/jmeter"
     use doc && dohtml -r docs/*
-} 
+}
