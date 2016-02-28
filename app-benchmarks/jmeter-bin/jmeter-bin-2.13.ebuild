@@ -11,7 +11,6 @@ RESTRICT="mirror"
 
 JM_PLUGINS="+pl_standard +pl_extras
 	pl_extraslibs pl_hadoop pl_webdriver"
-
 IUSE="beanshell doc ${JM_PLUGINS}"
 
 HOMEPAGE="http://jmeter.apache.org/ http://jmeter-plugins.org/"
@@ -27,7 +26,7 @@ COMMON_DEP="
 	>=dev-java/bsf-2.3
 	=dev-java/junit-3.8*
 	java-virtuals/javamail"
-DEPEND=">=virtual/jdk-1.4
+DEPEND=">=virtual/jdk-1.6
 	doc? ( >=dev-java/velocity-1.4 )
 	dev-java/ant-nodeps
 	sys-apps/sed
@@ -35,7 +34,7 @@ DEPEND=">=virtual/jdk-1.4
 RDEPEND=">=virtual/jre-1.6
 	${COMMON_DEP}"
 
-S=${WORKDIR}/apache-jmeter-${PV}
+S="${WORKDIR}/apache-jmeter-${PV}"
 
 src_unpack() {
 	unpack "apache-jmeter-${PV}.tgz"
@@ -61,11 +60,11 @@ src_install() {
 		cp -pPR printable_docs "${dest}" || die "Failed to install docs"
 	fi
 	dodoc README || die
-	dosym "/opt/${PN}/bin/jmeter" "/usr/bin/jmeter-bin"
-	make_desktop_entry "jmeter-bin" "Apache JMeter"
+	dosym "/opt/${PN}/bin/jmeter" "/usr/bin/jmeter"
+	make_desktop_entry "jmeter" "Apache JMeter"
 	use doc && dohtml -r docs/*
 }
 
 pkg_postinst() {
-	einfo "For using with some window managers try install x11-misc/wmname"
+	einfo "For using properly with some window managers try install x11-misc/wmname"
 }
