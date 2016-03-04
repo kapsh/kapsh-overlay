@@ -1,0 +1,11 @@
+--- a/build.xml	2009-11-29 00:22:32.000000000 +0300
++++ b/build.xml	2016-03-05 02:43:50.818893744 +0300
+@@ -16,7 +16,7 @@
+ 	<target name="jar" depends="clean">
+ 		<mkdir dir="${target}"/>
+ 		<mkdir dir="${bin}"/>
+-		<javac srcdir="${src}" destdir="${bin}" source="1.4" target="1.4"/>
++		<javac encoding="utf-8" srcdir="${src}" destdir="${bin}" source="1.4" target="1.4"/>
+ 		<jar destfile="${target}/${jar}">
+ 			<manifest>
+ 				<attribute name="Main-Class" value="org.w3c.tidy.Tidy"/>
