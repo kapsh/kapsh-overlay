@@ -1,5 +1,5 @@
---- a/ide/launcher/unix/netbeans	2016-03-05 03:28:28.334856465 +0300
-+++ b/ide/launcher/unix/netbeans	2016-03-05 04:25:09.868809106 +0300
+--- a/nbbuild/netbeans/bin/netbeans	2016-03-05 03:28:28.334856465 +0300
++++ b/nbbuild/netbeans/bin/netbeans	2016-03-05 04:25:09.868809106 +0300
 @@ -199,6 +199,9 @@
  	netbeans_default_options="-L-XX:PermSize=32m ${netbeans_default_options}"
  fi
