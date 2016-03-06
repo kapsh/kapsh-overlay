@@ -1,0 +1,34 @@
+#!/sbin/runscript
+# Copyright 1999-2016 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# $Id$
+
+update_issue() {
+	template="/etc/issue.template"
+	issue="/etc/issue"
+	if ! [ -f "${template}" ]; then
+		eerror "${template} not found"
+		return 1
+	fi
+	codename="$(kernel-codename)"
+	if [ "$?" != "0" ]; then
+		return 1
+	fi
+	if [ -z "${codename}" ]; then
+		ewarn "Can not detect codename"
+	else
+		sed -e "s/CODENAME/\"${codename}\"/" "${template}" > "${issue}"
+	fi
+}
+
+depend() {
+	need net
+	need localmount
+}
+
+start() {
+	ebegin "Updating /etc/issue"
+	update_issue
+	eend $?
+}
+
