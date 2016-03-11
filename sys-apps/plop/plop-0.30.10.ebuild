@@ -16,7 +16,7 @@ KEYWORDS="~alpha amd64 ~arm ~hppa ~ia64 ~mips ~ppc ~ppc64 ~s390 ~sh ~sparc x86 ~
 IUSE="bash-completion zsh-completion"
 
 DEPEND=">=dev-lang/perl-5.8.0-r12
-	 >=dev-perl/DateManip-5.40
+	 >=dev-perl/Date-Manip-5.40
 	 dev-perl/libwww-perl"
 RDEPEND="${DEPEND}"
 
