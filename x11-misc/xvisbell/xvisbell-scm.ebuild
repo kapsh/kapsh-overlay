@@ -10,11 +10,17 @@ DESCRIPTION="simple program that flashes a white bar on the screen whenever the 
 HOMEPAGE="https://github.com/rianhunter/xvisbell"
 SRC_URI=""
 EGIT_REPO_URI="https://github.com/rianhunter/xvisbell.git"
-EGIT_BRANCH="master"
+
+if [ "${PV}" = "scm" ]; then
+	EGIT_BRANCH="master"
+	KEYWORDS=""
+else
+	EGIT_COMMIT="fe92300"
+	KEYWORDS="~x86 ~amd64"
+fi
 
 LICENSE="GPL-3"
 SLOT="0"
-KEYWORDS="~x86 ~amd64"
 IUSE=""
 
 DEPEND=""
