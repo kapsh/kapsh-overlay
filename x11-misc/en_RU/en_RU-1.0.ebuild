@@ -10,7 +10,7 @@ SRC_URI="http://catap.ru/stuff/en_RU"
 
 LICENSE="freedist"
 SLOT="0"
-KEYWORDS="amd64 x86"
+KEYWORDS=""
 IUSE=""
 
 DEPEND=""
