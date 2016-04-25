@@ -11,12 +11,18 @@ HOMEPAGE="https://github.com/drafterleo/matcharea"
 SRC_URI=""
 
 EGIT_REPO_URI="https://github.com/drafterleo/matcharea.git"
-EGIT_BRANCH="master"
 
 LICENSE=""
 SLOT="0"
-KEYWORDS="~amd64 ~x86"
 IUSE=""
+
+if [ "${PV}" = "scm" ]; then
+	KEYWORDS=""
+	EGIT_BRANCH="master"
+else
+	KEYWORDS="~amd64 ~x86"
+	EGIT_COMMIT="1b1227c"
+fi
 
 DEPEND=""
 RDEPEND="${DEPEND}
