@@ -25,7 +25,7 @@ then    # auto-fu.zsh gives confusing messages with warn_create_global:
 }
     zstyle ':auto-fu:highlight' input
     zstyle ':auto-fu:highlight' completion fg=yellow
-    zstyle ':auto-fu:highlight' completion/one fg=green
+    zstyle ':auto-fu:highlight' completion/one fg=white
     zstyle ':auto-fu:var' postdisplay # $'\n-azfu-'
     zstyle ':auto-fu:var' track-keymap-skip opp
     zstyle ':auto-fu:var' enable all
