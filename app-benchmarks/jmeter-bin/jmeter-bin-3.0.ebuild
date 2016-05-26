@@ -2,7 +2,7 @@ EAPI="5"
 
 inherit java-pkg-2 java-ant-2
 
-KEYWORDS="~amd64 ~x86"
+KEYWORDS=""
 
 LICENSE="Apache-2.0"
 DESCRIPTION="Load test and measure performance on HTTP/FTP services and databases."
