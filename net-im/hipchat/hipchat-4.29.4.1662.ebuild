@@ -53,9 +53,8 @@ src_install() {
 
 	insinto /opt
 	doins -r opt/HipChat4
-	fperms 755 /opt/HipChat4/bin/hellocpp /opt/HipChat4/bin/HipChat4 /opt/HipChat4/bin/QtWebEngineProcess
-	fperms 755 /opt/HipChat4/lib/HipChat.bin /opt/HipChat4/lib/QtWebEngineProcess.bin
-	fperms 755 /opt/HipChat4/lib/linuxbrowserlaunch.sh
+	fperms 755 /opt/HipChat4/bin/{hellocpp,HipChat4,QtWebEngineProcess}
+	fperms 755 /opt/HipChat4/lib/{HipChat.bin,QtWebEngineProcess.bin,linuxbrowserlaunch.sh}
 
 	make_wrapper "${PN}" /opt/HipChat4/bin/HipChat4
 	make_desktop_entry "${PN}" HipChat hipchat4 "Network;Chat"
