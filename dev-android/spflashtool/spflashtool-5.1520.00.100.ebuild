@@ -10,8 +10,7 @@ DESCRIPTION="SmartPhone Flash Tool for MTK based Android devices"
 HOMEPAGE="http://spflashtool.com/"
 SRC_URI="
 	x86? ( http://spflashtool.com/download/SP_Flash_Tool_Linux_32Bit_v${PV}.zip )
-	amd64? ( http://spflashtool.com/download/SP_Flash_Tool_exe_Linux_64Bit_v${PV}.zip )
-	udev-rules? ( https://github.com/M0Rf30/android-udev-rules/raw/master/51-android.rules )"
+	amd64? ( http://spflashtool.com/download/SP_Flash_Tool_exe_Linux_64Bit_v${PV}.zip )"
 
 LICENSE=""
 SLOT="0"
@@ -51,7 +50,7 @@ src_prepare() {
 src_install() {
 	if use udev-rules; then
 		insinto /lib/udev/rules.d/
-		doins "${DISTDIR}/51-android.rules"
+		doins "${FILESDIR}/51-android.rules"
 	fi
 	local dest=/opt/${PN}
 	dodir ${dest}
@@ -65,4 +64,6 @@ src_install() {
 pkg_postinst(){
 	ewarn "After first installation of udev rules run as root:"
 	ewarn "# udevadm control --reload-rules"
+	einfo "Latest version of udev rules can be found at
+		https://github.com/M0Rf30/android-udev-rules"
 }
