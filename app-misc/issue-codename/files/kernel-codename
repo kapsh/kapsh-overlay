@@ -8,9 +8,8 @@ kernelVersion=$(uname -r | sed "s/-.*//g")
 # strip trailing .0 version, since the git tags on kernel.org do not have them
 kernelVersion=${kernelVersion/%".0"/}
 
-cacheDir="/var/tmp/kernel-codename"
-cacheFile="$cacheDir/$USER"
-mkdir -p "$cacheDir"
+cacheDir="/var/tmp/"
+cacheFile="$cacheDir/kernel-codename_$USER"
 
 if [[ -f "$cacheFile" ]]; then
     cache=$(cat $cacheFile)
