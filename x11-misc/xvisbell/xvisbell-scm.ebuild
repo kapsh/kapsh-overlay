@@ -15,7 +15,7 @@ if [ "${PV}" = "scm" ]; then
 	EGIT_BRANCH="master"
 	KEYWORDS=""
 else
-	EGIT_COMMIT="fe92300"
+	EGIT_COMMIT="10674328"
 	KEYWORDS="~x86 ~amd64"
 fi
 
