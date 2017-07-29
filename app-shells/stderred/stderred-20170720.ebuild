@@ -1,0 +1,1 @@
+stderred-scm.ebuild

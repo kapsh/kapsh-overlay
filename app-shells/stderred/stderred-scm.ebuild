@@ -18,3 +18,11 @@ IUSE=""
 DEPEND=""
 RDEPEND="${DEPEND}"
 
+if [ "$PV" = "scm" ]; then
+	EGIT_BRANCH="master"
+	KEYWORDS=""
+else
+	EGIT_COMMIT="399e3b1"
+	KEYWORDS="~x86 ~amd64"
+fi
+
