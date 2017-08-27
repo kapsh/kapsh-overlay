@@ -1,0 +1,13 @@
+diff --git a/src/_ansible-playbook b/src/_ansible-playbook
+index 95aa261..e7c6b6a 100644
+--- a/src/_ansible-playbook
++++ b/src/_ansible-playbook
+@@ -127,7 +127,7 @@ _ansible-playbook ()
+   typeset -A opt_args
+ 
+   _arguments -C -W \
+-    "1:playbook yml file:_files -g '*.yml'"\
++    "1:playbook yml file:_files -g '*.yml|*.yaml'"\
+     '--ask-become-pass[ask for privilege escalation password]'\
+     "(-k --ask-pass)"{-k,--ask-pass}"[ask for connection password]"\
+     '--ask-su-pass[ask for su password (deprecated, use become)]'\
