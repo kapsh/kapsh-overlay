@@ -38,11 +38,14 @@ RDEPEND="${DEPEND}"
 
 S=${WORKDIR}
 
+
 #For now, it seems impossible to delete bundled qt
 #Any tips are welcome
 
 src_prepare() {
 	rm opt/HipChat4/lib/libxkbcommon{,-x11}.so.0 || die
+	eapply_user
+	eapply "${FILESDIR}/linuxbrowserlaunch.patch"
 }
 
 src_install() {
